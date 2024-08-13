@@ -108,7 +108,7 @@ proto_qmid_setup() {
 	fi
 
 	# pass configuration to it
-	ubus call "uqmid.modem.$name" configure "{'apn':'$apn', 'username': '$username', 'password': '$password', 'pin': '$pin', 'roaming':'$roaming}"
+	ubus call "uqmid.modem.$name" configure "{'apn':'$apn', 'username': '$username', 'password': '$password', 'pin': '$pin', 'roaming':'$roaming'}"
 	sleep 1
 
 	# check if simcard is fine
