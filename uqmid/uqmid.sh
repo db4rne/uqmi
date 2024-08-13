@@ -91,7 +91,7 @@ proto_qmid_setup() {
 	}
 
 	# check if uqmi already knows the device
-	[ -z "$name" ] && name=_qmid_convert_devtoname "$device"
+  [ -z "$name" ] && name=$(_qmid_convert_devtoname "$device")
 
 	if [ -z "$name" ]; then
 		echo "Name not set and can't derived from device $device."
@@ -251,7 +251,7 @@ proto_qmid_teardown() {
 	json_get_vars device
 
 	[ -n "$ctl_device" ] && device=$ctl_device
-	[ -z "$name" ] && name=_qmid_convert_devtoname "$device"
+  [ -z "$name" ] && name=$(_qmid_convert_devtoname "$device")
 
 	echo "Stopping network $interface"
 
